@@ -1,0 +1,4 @@
+ansible automation notes
+
+cd 01_basics
+$ ansible-playbook -i demo/inventory debug.yml
