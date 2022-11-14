@@ -5,4 +5,28 @@
     - name: debug message
       ansible.builtin.debug:
         msg: "Hello world!"
-    
+
+# -->
+# brasea@ubuntu:~/Desktop/Workspace/ansible_projects/01_basics$ ansible-playbook -i demo/inventory debug.yml
+# [WARNING]: Unable to parse
+# /home/brasea/Desktop/Workspace/ansible_projects/01_basics/demo/inventory as an
+# inventory source
+# [WARNING]: No inventory was parsed, only implicit localhost is available
+# [WARNING]: provided hosts list is empty, only localhost is available. Note that
+# the implicit localhost does not match 'all'
+
+# PLAY [debug module demo] *******************************************************
+
+# TASK [Gathering Facts] *********************************************************
+# ok: [localhost]
+
+# TASK [debug message] ***********************************************************
+# ok: [localhost] => {
+#     "changed": false,
+#     "msg": "Hello world!"
+# }
+
+# PLAY RECAP *********************************************************************
+# localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+# brasea@ubuntu:~/Desktop/Workspace/ansible_projects/01_basics$ ansible-playbook -i demo/inventory debug.yml
