@@ -1,10 +1,10 @@
----
-- name: debug module demo
-  hosts: localhost
-  tasks:
-    - name: debug message
-      ansible.builtin.debug:
-        msg: "Hello world!"
+# ---
+# - name: debug module demo
+#   hosts: localhost
+#   tasks:
+#     - name: debug message
+#       ansible.builtin.debug:
+#         msg: "Hello world!"
 
 # -->
 # brasea@ubuntu:~/Desktop/Workspace/ansible_projects/01_basics$ ansible-playbook -i demo/inventory debug.yml
@@ -30,3 +30,20 @@
 # localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 # brasea@ubuntu:~/Desktop/Workspace/ansible_projects/01_basics$ ansible-playbook -i demo/inventory debug.yml
+
+---
+- name: ansible test of vars
+  hosts: localhost
+  vars:
+    fruit: "apple"
+  tasks:
+    - name: fruit message
+      ansible.builtin.debug:
+        var: fruit
+
+# TASK [fruit message] ***********************************************************
+# ok: [localhost] => {
+#     "changed": false,
+#     "fruit": "apple"
+# }
+
