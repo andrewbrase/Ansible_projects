@@ -6,7 +6,9 @@
 #       ansible.builtin.debug:
 #         msg: "Hello world!"
 
+# $ ansible-playbook -i demo/inventory debug.yml
 # -->
+
 # brasea@ubuntu:~/Desktop/Workspace/ansible_projects/01_basics$ ansible-playbook -i demo/inventory debug.yml
 # [WARNING]: Unable to parse
 # /home/brasea/Desktop/Workspace/ansible_projects/01_basics/demo/inventory as an
@@ -31,6 +33,24 @@
 
 # brasea@ubuntu:~/Desktop/Workspace/ansible_projects/01_basics$ ansible-playbook -i demo/inventory debug.yml
 
+# ////
+# ---
+# - name: ansible test of vars
+#   hosts: localhost
+#   vars:
+#     fruit: "apple"
+#   tasks:
+#     - name: fruit message
+#       ansible.builtin.debug:
+#         var: fruit
+
+# TASK [fruit message] ***********************************************************
+# ok: [localhost] => {
+#     "changed": false,
+#     "fruit": "apple"
+# }
+
+# ////
 ---
 - name: ansible test of vars
   hosts: localhost
@@ -39,11 +59,26 @@
   tasks:
     - name: fruit message
       ansible.builtin.debug:
-        var: fruit
+        msg: "this is an {{ fruit }} "
 
-# TASK [fruit message] ***********************************************************
+# TASK [fruit message] **********************************************************************************
 # ok: [localhost] => {
 #     "changed": false,
-#     "fruit": "apple"
+#     "msg": "this is an apple "
 # }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
