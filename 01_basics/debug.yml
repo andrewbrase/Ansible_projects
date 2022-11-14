@@ -172,3 +172,8 @@
 # }
 
 # -------------------------------------------------------------------------------------------------------------
+# Break a string over multiple lines: Ansible ">" and "|" operators
+
+# there are two options
+# | - literal block scolar
+# > - folded block scolar
