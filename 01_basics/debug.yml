@@ -7,7 +7,7 @@
 #         msg: "Hello world!"
 
 # $ ansible-playbook -i demo/inventory debug.yml
-# -->
+# --->
 
 # brasea@ubuntu:~/Desktop/Workspace/ansible_projects/01_basics$ ansible-playbook -i demo/inventory debug.yml
 # [WARNING]: Unable to parse
@@ -51,6 +51,30 @@
 # }
 
 # ////
+# ---
+# - name: ansible test of vars
+#   hosts: localhost
+#   vars:
+#     fruit: "apple"
+#   tasks:
+#     - name: fruit message
+#       ansible.builtin.debug:
+#         msg: "this is an {{ fruit }} "
+
+# TASK [fruit message] **********************************************************************************
+# ok: [localhost] => {
+#     "changed": false,
+#     "msg": "this is an apple "
+# }
+
+# ////
+
+
+# Console commands have different verbosity levels, 
+# which determine the messages displayed in their output. 
+# By default, commands display only the most useful messages, 
+# but you can control their verbosity with the -q and -v 
+# options:
 ---
 - name: ansible test of vars
   hosts: localhost
@@ -60,18 +84,19 @@
     - name: fruit message
       ansible.builtin.debug:
         msg: "this is an {{ fruit }} "
+        verbosity: 2
 
-# TASK [fruit message] **********************************************************************************
+# $ ansible-playbook -i demo/inventory -vv debug.yml
+
+# --->
+# TASK [fruit message] ****************************************************************************************
+# task path: /home/brasea/Desktop/Workspace/ansible_projects/01_basics/debug.yml:84
 # ok: [localhost] => {
 #     "changed": false,
 #     "msg": "this is an apple "
 # }
-
-
-
-
-
-
+# META: ran handlers
+# META: ran handlers
 
 
 
