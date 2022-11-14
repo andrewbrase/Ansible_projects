@@ -148,19 +148,27 @@
 
 # you can also include a yml file
 
----
-- name: adding variables demo
-  hosts: localhost
-  vars:
-    demo: "adding variables demo"
-  tasks:
-    - name: print variables in use
-      ansible.builtin.debug:
-        msg: "this is from the {{ demo }}, 
-              the file in use is: {{ file_name }}"
+# ---
+# - name: adding variables demo
+#   hosts: localhost
+#   vars:
+#     demo: "adding variables demo"
+#   tasks:
+#     - name: print variables in use
+#       ansible.builtin.debug:
+#         msg: "this is from the {{ demo }}, 
+#               the file in use is: {{ file_name }}"
 
 # $ ansible-playbook -i demo/inventory --extra-vars="@vars.json" debug.yml
 # ok: [localhost] => {
 #     "changed": false,
 #     "msg": "this is from the adding variables demo, the file in use is: vars.json"
 # }
+
+# $ ansible-playbook -i demo/inventory --extra-vars="@vars.yml" debug.yml
+# ok: [localhost] => {
+#     "changed": false,
+#     "msg": "this is from the adding variables demo, the file in use is: vars.yml"
+# }
+
+# -------------------------------------------------------------------------------------------------------------
