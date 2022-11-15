@@ -47,6 +47,9 @@ cardict = {
     }
 }
 
+print(type(cardict))
+# dict
+# <class 'dict'>
 
 print(yaml.dump(cardict))
 print(type(yaml.dump(cardict)))
