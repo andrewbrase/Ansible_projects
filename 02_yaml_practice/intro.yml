@@ -1,1 +1,103 @@
 # YAML is a data serialization language
+# -converting data into a format that can easily be stored
+# -or sent over the network
+
+# For example you could use Python to serialize the 
+# data and send it over the network to a Javascript 
+# program that will deserialize the data and use it
+
+# Python-> serialize-> yaml-> JS
+
+# everything in YAML is a key-value pair
+# aka dictionary/ hash/ object/ map
+
+# an employee record
+# ---
+# name: Martin
+# job: Developer
+# employed: True
+# foods:
+#   - Apple
+#   - Orange
+#   - Strawberry
+#   - Mango
+# languages:
+#   python: good
+#   javascript: good
+#   rust: good
+# education: |
+#   4 GCSEs
+#   3 A-Levels
+#   BSc in the IoT
+
+# everything in YAML is a key-value pair
+# Straberry is a part of this dictionary
+
+# this is a list
+# foods:
+#   - Apple
+#   - Orange
+#   - Strawberry
+#   - Mango
+
+# the keys are always strings
+# values can be anything
+
+# whitespace is a part of YAML formatting
+# newlines indicate the end of a field
+
+# you can write it like this
+
+# key and value
+# key:
+#   company_01:
+#     years: 2
+#     role: "junior devops"
+#   company_02:
+#     years: 5
+#     role: "sernior devops"
+#   company_03:
+#     years: 3
+#     role: "devops architect"
+
+# yaml vs json
+
+# json format
+# Note that in JSON, true and false are lower case, whereas in Python they are capitalized ( True and False )
+# JSON everythin needs double quotes
+# {
+#   "name": "Martin",
+#   "job": "Developer",
+#   "employed": true,
+#   "foods": [
+#     "apple",
+#     "orange",
+#     "strawberry",
+#     "mango"
+#   ],
+#   "languages": {
+#     "python": "good",
+#     "javascript": "good",
+#     "rust": "good"
+#   },
+#   "education": "4 GCSEs\n3 A-Levels\nBSc in the IoT\n"
+# }
+
+# ---
+# name: Martin
+# job: Developer
+# employed: True
+# foods:
+#   - Apple
+#   - Orange
+#   - Strawberry
+#   - Mango
+# languages:
+#   Python: good
+#   Javascript: good
+#   Rust: good
+#   # multiline string with the pipe symbol 
+# education: |
+#   4 GCSEs
+#   3 A-Levels
+#   BSc in the IoT
