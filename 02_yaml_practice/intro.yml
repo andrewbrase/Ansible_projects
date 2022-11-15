@@ -114,3 +114,56 @@
 # serialization of data and its types. 
 # ** A “dictionary” (in Python) is a builtin data type 
 # which maps keys to values.
+# see example in dict_vs_json
+
+# import json
+# employee_0= {
+#     "name":"Martin",
+#     "Job":"Developer",
+#     "Age":31,
+#     "employed":True,
+# }
+
+# print(type(employee_0))
+# # class dict
+
+# # Serializing
+# json_object = json.dumps(employee_0)
+# print(json_object)
+# print(type(json_object))
+# # class str
+
+# # --->
+# # <class 'dict'>
+# # {"name": "Martin", "Job": "Developer", "Age": 31, "employed": true}
+
+# # <class 'str'>
+
+# Usability has made JSON one of the most popular 
+# means of serializing data. With it, data can 
+# easily be translated from objects into formats 
+# that can be stored (for example, in a file) or 
+# transmitted (for example, across a network).
+
+# PyYAML python module - see PyYAML.py
+# (python file)
+# PyYAML is a YAML parser for Python
+# >pip install pyyaml
+
+# import yaml
+# # reading a YAML file
+# with open('PyYAML.yml') as f:
+#     yaml_contents = yaml.load_all(f, Loader=yaml.FullLoader)
+#     for yaml_content in yaml_contents:  
+#         for key, value in yaml_content.items():
+#             print(f"{key}: {value}")
+
+# (myprojenv) C:\Users\brasea\Desktop\Workspace\Ansible_projects\02_yaml_practice>py PyYAML.py
+# name: Martin
+# job: Developer
+# employed: True
+# foods: ['Apple', 'Orange', 'Strawberry', 'Mango']
+# languages: {'Python': 'good', 'Javascript': 'good', 'Rust': 'good'}
+# education: 4 GCSEs
+# 3 A-Levels
+# BSc in the IoT

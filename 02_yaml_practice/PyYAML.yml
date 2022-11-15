@@ -1,0 +1,17 @@
+---
+name: Martin
+job: Developer
+employed: True
+foods:
+  - Apple
+  - Orange
+  - Strawberry
+  - Mango
+languages:
+  Python: good
+  Javascript: good
+  Rust: good 
+education: |
+  4 GCSEs
+  3 A-Levels
+  BSc in the IoT
