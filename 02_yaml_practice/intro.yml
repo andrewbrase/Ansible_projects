@@ -101,3 +101,16 @@
 #   4 GCSEs
 #   3 A-Levels
 #   BSc in the IoT
+
+# JSON vs Python-Dictionary
+# -Json is a data fromat of type: STRING while a 
+# Python dictionary is a DATA STRUCTURE
+
+# If you need to exchange data between differnet 2  
+# different systems/processes, we could serialize 
+# the Python dictionary to a JSON object
+
+# ** JSON is an “object notation” … an encoding for 
+# serialization of data and its types. 
+# ** A “dictionary” (in Python) is a builtin data type 
+# which maps keys to values.
