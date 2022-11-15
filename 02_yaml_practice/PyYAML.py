@@ -17,51 +17,6 @@ with open('PyYAML.yml') as f:
             print(f"{key}: {value}")
     print("\n\n")
 
-# The REVERSE of this is converting this python dictionary into a YAML format
-# we achieve that using the dump() function
-
-# this method will serialize a Python object into
-# a YAML stream, where the Python obect could
-# be a dictionary
-
-cardict = [["this","is","a","list"],{
-    "car": {
-        "brand": "Ford",
-        "model": "mustang",
-        "year": 1964
-    }
-},
-    {
-    "factories": {
-        "building_01": "Illinois",
-        "building_02": "Michigan",
-        "building_03": "Wisconsin"
-    }
-}]
-
-# - - this
-#   - is
-#   - a
-#   - list
-# - brand: Ford
-#   model: mustang
-#   year: 1964
-# - factories:
-#     building_01: Illinois
-#     building_02: Michigan
-#     building_03: Wisconsin
-
-print(yaml.dump(cardict))
-print(type(yaml.dump(cardict)))
-
-# (converted into yaml)
-# brand: Ford
-# model: mustang
-# year: 1964
-
-# <class 'str'>
-
-# ___
 # name: Martin
 # job: Developer
 # employed: True
@@ -71,19 +26,43 @@ print(type(yaml.dump(cardict)))
 # 3 A-Levels
 # BSc in the IoT
 
+# The REVERSE of this is converting this python dictionary into a YAML format
+# we achieve that using the dump() function
+
+# this method will serialize a Python object into
+# a YAML stream, where the Python obect could
+# be a dictionary
+
+cardict = {
+    'a_list': ["this", "is", "a", "list"], 
+    "car": {
+        "brand": "Ford",
+        "model": "mustang",
+        "year": 1964
+    },
+    "factories": {
+        "building_01": "Illinois",
+        "building_02": "Michigan",
+        "building_03": "Wisconsin"
+    }
+}
 
 
-# - - this
-#   - is
-#   - a
-#   - list
-# - car:
-#     brand: Ford
-#     model: mustang
-#     year: 1964
-# - factories:
-#     building_01: Illinois
-#     building_02: Michigan
-#     building_03: Wisconsin
+print(yaml.dump(cardict))
+print(type(yaml.dump(cardict)))
+
+# a_list:
+# - this
+# - is
+# - a
+# - list
+# car:
+#   brand: Ford
+#   model: mustang
+#   year: 1964
+# factories:
+#   building_01: Illinois
+#   building_02: Michigan
+#   building_03: Wisconsin
 
 # <class 'str'>
