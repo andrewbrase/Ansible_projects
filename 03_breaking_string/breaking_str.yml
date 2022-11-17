@@ -1,0 +1,73 @@
+# ---
+# - name: breaking a string over multiple lines
+#   hosts: localhost
+#   vars:
+#     # | literal block scolar
+#     variable1: |
+#       exactly as you see
+#       will appear these three
+#       lines of poetry
+#     # > folded block scolar
+#     variable2: >
+#       this is really a
+#       single line of text
+#       despite appeareance
+#   tasks:
+#     - name: print var1
+#       ansible.builtin.debug:
+#         var: variable1
+    
+#     - name: print var2
+#       ansible.builtin.debug:
+#         var: variable2
+
+# $ ansible-playbook -i demo/inventory breaking_str.yml
+  # TASK [print var1] ***************************************************************************
+  # ok: [localhost] => {
+  #     "changed": false,
+  #     "variable1": "exactly as you see\nwill appear these three\nlines of poetry\n"
+  # }
+
+  # TASK [print var2] ***************************************************************************
+  # ok: [localhost] => {
+  #     "changed": false,
+  #     "variable2": "this is really a single line of text despite appeareance\n"
+  # }
+
+---
+- name: breaking a string over multiple lines
+  hosts: localhost
+  vars:
+    # | literal block scolar
+    variable1: |
+      exactly as you see
+      will appear these three
+      lines of poetry
+    # > folded block scolar
+    variable2: >
+      this is really a
+      single line of text
+      despite appeareance
+  tasks:
+    - name: print var1
+      ansible.builtin.debug:
+        # how to make it print new lines to the console
+        # change to msg
+        # split the variable at ("\n")
+        msg: "{{ variable1.split('\n') }}"
+    
+    - name: print var2
+      ansible.builtin.debug:
+        var: variable2
+
+
+  # TASK [print var1] ***************************************************************************
+  # ok: [localhost] => {
+  #     "changed": false,
+  #     "msg": [
+  #         "exactly as you see",
+  #         "will appear these three",
+  #         "lines of poetry",
+  #         ""
+  #     ]
+  # }
