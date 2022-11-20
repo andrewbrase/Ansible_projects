@@ -11,5 +11,3 @@ $ ssh -i ~/.ssh/ans targetnode01@192.168.19.131
 
 pinging all hosts in the inv_file
 ansible all --key-file ~/.ssh/ans -i inventory -m ping
--
-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
