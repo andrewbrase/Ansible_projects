@@ -1,0 +1,13 @@
+$ ansible all --key-file ~/.ssh/ans -m ping
+brasea@ubuntu:~/Desktop/Workspace/ansible_projects$ ansible all --key-file ~/.ssh/ans -m ping
+
+targetnode01@192.168.19.131 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+
+ping all hosts in host file
+$ ansible all -m ping
