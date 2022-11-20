@@ -7,4 +7,4 @@ SSH setup
 ssh-copy-id targetnode01@192.168.19.131
 
 ssh with ansible key
-ssh -i ~/.ssh/ansible {hostname}
+$ ssh -i ~/.ssh/ans targetnode01@192.168.19.131
