@@ -2,11 +2,24 @@ ansible automation notes
 
 cd 01_basics
 $ ansible-playbook -i demo/inventory debug.yml
-
-service ssh status
+~~~~~~~~~~~~~~~~~~~
 
 SSH setup
+
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo ufw allow ssh
+
+service ssh status
 ssh-copy-id targetnode01@192.168.19.131
+>
+The authenticity of host '192.168.19.132 (192.168.19.132)' can't be established.
+ECDSA key fingerprint is SHA256:RKeXF/BnyhlQ6ywV2/2qRtQDFTpGJ9XBqr6ad/YTCco.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 
 ssh with ansible key
 $ ssh -i ~/.ssh/ans targetnode01@192.168.19.131
+
+$ exit
