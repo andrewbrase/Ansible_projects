@@ -3,6 +3,8 @@ ansible automation notes
 cd 01_basics
 $ ansible-playbook -i demo/inventory debug.yml
 
+service ssh status
+
 SSH setup
 ssh-copy-id targetnode01@192.168.19.131
 

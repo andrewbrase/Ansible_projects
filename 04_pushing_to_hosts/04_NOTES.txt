@@ -1,8 +1,12 @@
-ping all hosts with ansible
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-$ ansible all --key-file ~/.ssh/ans -m ping
-brasea@ubuntu:~/Desktop/Workspace/ansible_projects$ ansible all --key-file ~/.ssh/ans -m ping
+* if you have a DNS server you can actually just 
+include the hostnames within the hosts file 
+instead of the ip addresses
+~~~~~~~~~~~~~~~~~~~~~
 
+brasea@ubuntu:~/Desktop/Workspace/ansible_projects$ 
+ansible all --key-file ~/.ssh/ans -i inventory.INI -m ping
 targetnode01@192.168.19.131 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
@@ -11,9 +15,22 @@ targetnode01@192.168.19.131 | SUCCESS => {
     "ping": "pong"
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- command after creating local inventory and ansible.cfg 
-ansible all -m ping
+- ansible was able to connect to each of the servers 
+and establish a connection
+
+* this was not a ICMP ping, it connected to the servers 
+- we are able to communciate with servers with ansible
+~~~~~~~~~~~~~~~~~~~~~
+
+*** simple way ***
+- command after creating local inventory and setting up 
+inventory = inventory
+private_key_file = ~/.ssh/ans
+
+in the ansible.cfg file 
+
+~~~~~~~~~~~~~~~~~~~~~
+$ ansible all -m ping
 
 brasea@ubuntu:~/Desktop/Workspace/ansible_projects$ ansible all -m ping
 targetnode01@192.168.19.131 | SUCCESS => {
@@ -23,3 +40,11 @@ targetnode01@192.168.19.131 | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
+
+(listing all of the ansible hosts)
+$ ansible all --list-hosts
+hosts (1):
+    targetnode01@192.168.19.131
+
+(running the gather facts module with -m)
+$ ansible all -m gather_facts
