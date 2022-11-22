@@ -112,3 +112,7 @@ ansible all -m apt -a name=vim-nox --become --ask-become-pass
 
 which vim
 located in /usr/bin
+~~~~~~~~~~~~~~~~~~~~~
+installs updates on servers
+ansible all -m apt -a "upgrade=dist" --become --ask-become-pass
+

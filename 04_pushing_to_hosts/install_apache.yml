@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: install apache2 package
+    apt:
+      upgrade: yes
+      update_cache: yes
+      # look at docs, name is package you want to install
+      name: apache2
