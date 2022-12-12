@@ -1,0 +1,15 @@
+set cli screen-length 0
+show chassis hardware
+show configuration | display set
+show chassis alarms
+show chassis hardware |match midplane
+show chassis environment
+show chassis craft-interface
+show version
+show chassis hardware
+show system core-dumps
+show system snapshot
+show chassis mac-addresses
+show configuration
+exit
+exit
